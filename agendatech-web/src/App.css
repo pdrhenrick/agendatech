@@ -1,0 +1,154 @@
+/* --- 1. VARIÁVEIS & CORES --- */
+:root {
+  --primary: #4361ee;       /* Azul Vibrante */
+  --primary-hover: #3a56d4;
+  --danger: #ef233c;        /* Vermelho */
+  --success: #06d6a0;       /* Verde */
+  --warning: #ffd166;       /* Amarelo */
+  --bg-body: #f3f4f6;       /* Fundo Cinza Moderno */
+  --bg-card: #ffffff;       /* Fundo Branco dos Cartões */
+  --text-main: #1f2937;     /* Cor do Texto */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --radius-pill: 9999px;    /* O Segredo do Botão Redondo */
+  --radius-card: 16px;      /* Cantos da Tabela */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. RESET --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- 3. LAYOUT & ANIMAÇÕES --- */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* --- 4. NAVBAR (Menu) --- */
+.navbar {
+  background: var(--bg-card);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), #7209b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links { display: flex; gap: 1rem; align-items: center; }
+
+.nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background-color: #eff6ff;
+  color: var(--primary);
+}
+
+/* --- 5. BOTÕES (Estilo Pílula) --- */
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-pill); /* Deixa redondinho */
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: var(--shadow-md);
+  filter: brightness(105%);
+}
+
+button:active { transform: translateY(0); }
+
+/* Classes de Cores para Botões */
+.btn-primary { background: var(--primary); color: white; }
+.btn-success { background: var(--success); color: white; }
+.btn-danger  { background: var(--danger); color: white; }
+.btn-logout  { background: #ef4444; color: white; } 
+
+/* --- 6. TABELAS (Estilo Card Flutuante) --- */
+.table-container {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th {
+  background: #f9fafb;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+tr:hover td { background-color: #f9fafb; }
+
+/* Badge de Status (Etiqueta Colorida) */
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
