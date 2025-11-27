@@ -1,30 +1,39 @@
-📅 Projeto AgendaTech
+📅 AgendaTech (Sistema Fullstack)
+O AgendaTech é uma solução completa para gestão de agendamentos de serviços, conectando prestadores de serviços a clientes de forma eficiente.
 
-Este é um sistema completo (Fullstack) desenvolvido como projeto de portfólio para gestão de agendamentos de serviços. O sistema conecta prestadores de serviços a clientes, oferecendo funcionalidades de gestão financeira, controle de agenda e autenticação segura.
+O projeto foi estruturado como um Monorepo, contendo tanto a API (Backend) quanto a Interface Web (Frontend).
 
-🎯 Objetivo
+🏛️ Arquitetura do Projeto
+Este repositório está dividido em dois módulos principais:
 
-O objetivo principal é fornecer uma plataforma eficiente onde Profissionais podem cadastrar seus serviços e gerir seus horários, enquanto Clientes podem agendar atendimentos de forma autônoma e rápida. O projeto foca em resolver o problema de conflito de horários e falta de organização financeira para autônomos.
+Módulo	Tecnologia	Descrição
+/backend
+Java (Spring Boot)	API RESTful responsável pela lógica de negócios, segurança (JWT) e acesso a dados.
+/frontend
+React.js (Vite)	Interface moderna e responsiva para interação dos usuários com o sistema.
 
-🚀 Tecnologias Usadas
+🚀 Tecnologias Utilizadas
+•	Backend: Java 17, Spring Boot 3, Spring Security (JWT), Hibernate/JPA, MySQL (ou H2), Maven.
+•	Frontend: React.js, Vite, Tailwind CSS, Axios.
+•	Ferramentas: Git, VS Code, Insomnia/Postman.
 
-•	O projeto foi desenvolvido utilizando as seguintes tecnologias:
-•	Frontend: React.js + Vite (para uma interface rápida e reativa).
-•	Estilização: CSS3 Moderno (Layout responsivo e Clean Design).
-•	Backend: Java 17 + Spring Boot 3 (API REST robusta).
-•	Segurança: Spring Security + JWT (Autenticação e Autorização baseada em tokens).
-•	Banco de Dados: MySQL (Persistência de dados com relacionamentos).
-•	ORM: Hibernate / Spring Data JPA.
+⚙️ Como Rodar o Projeto
+Para rodar a aplicação completa, você precisará iniciar os dois servidores (Back e Front) simultaneamente.
 
-📦 Como Rodar o Projeto
+1. Rodar a API (Backend)
+cd backend
+./mvnw spring-boot:run
+# O servidor iniciará em http://localhost:8081
 
-Pré-requisitos
-Ter instalado: Java 17+, Node.js e MySQL.
+2. Rodar a Interface (Frontend)
+cd frontend
+npm install
+npm run dev
+# O site iniciará em http://localhost:5173
 
-1.	Banco de Dados: Crie um banco chamado agendatech no MySQL.
-2.	Backend: Entre na pasta agendatech, configure o application.properties e rode: ./mvnw clean spring-boot:run.
-3.	Frontend: Entre na pasta agendatech-web, instale as dependências (npm install) e inicie: npm run dev.
+🎯 Funcionalidades Principais
+•	Cadastro e Autenticação de Usuários (Login seguro).
+•	Gestão de Serviços (CRUD).
+•	Agendamento de Horários.
+•	Painel Administrativo.
 
-✅ Status do Projeto
-
-O projeto encontra-se finalizado, com todas as funcionalidades de CRUD, Agendamento e Dashboard implementadas e funcionais.
